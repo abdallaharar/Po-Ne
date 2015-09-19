@@ -1,18 +1,31 @@
 ﻿@{
-    ViewBag.Title = "Positive/Negative Feedback Scraper";
+    ViewBag.Title = "BlitzFeed";
 }
 
 <style>
     .jumbotron {
-        background-color:white;
+        background-color: white;
+    }
+
+    #Title {
+        font-weight: bold;
+        color: #00375a;
+    }
+
+    #SubTitle {
+        font-style: italic;
     }
 </style>
 
 <div class="jumbotron">
-    <h1 id="Title">Positive/Negative Feedback Scraper</h1>
-    <p class="lead">Welcome to the positive negative feedback scraper. Type product and this will scrape the web for positive and negative feedback</p>
+    <div class="col-xs-6 col-md-2">
+        <img vspace="20" class="jumbotronwidth" alt=" " src="~/Content/Images/BlitzFeed Logo Partial.png" height="200" width="200">
+    </div>
+    <div class="col-xs-6 col-md-10">
+        <h1 id="Title">litzFeed</h1>
+        <p class="lead" id="SubTitle">Opnions When They Matter</p>
+    </div>
 </div>
-
 <div class="row">
     <div class="col-md-4">
         <h2></h2>
@@ -28,6 +41,5 @@
     </div>
 </div>
 
-<form id="test-form" data-ajax="false">
-   
-</form>
+<p></p>
+<form id="test-form" data-ajax="false"></form>
