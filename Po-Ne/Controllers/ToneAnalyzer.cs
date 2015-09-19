@@ -20,22 +20,15 @@ namespace Watson
             {
                 String userName = "f2f8a4ad-f87c-487a-85fe-92a8d150944e";
                 String password = "QUSjnSsOtgEU";
+
                 String credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(userName + ":" + password));
                 client.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
-                //"{\"scorecard\":\"test\",\"text\":\"I am sad\"}"
-                String json = "I am sad";
                 client.Headers[HttpRequestHeader.ContentType] = "text/plain";
-                result = client.UploadString("https://gateway.watsonplatform.net/tone-analyzer-experimental/api/v1/tone", json);
+                result = client.UploadString("https://gateway.watsonplatform.net/tone-analyzer-experimental/api/v1/tone", body);
 
-
-                JsonObject resultJson = JsonParser.Deserialize(result);
+                JsonObject resultJson = (JsonObject) JsonValue.Parse(result);
                 Console.WriteLine(resultJson);
             }
-        }
-
-        public static void Main()
-        {
-            getToneAnalysis("test", "I am sad");
         }
 
     }
