@@ -12,5 +12,10 @@ namespace Po_Ne.Controllers
         {
             return View();
         }
+
+        public ActionResult Test()
+        {
+            return View();
+        }
     }
 }
