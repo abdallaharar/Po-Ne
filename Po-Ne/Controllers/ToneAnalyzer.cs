@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using Json;
 
 namespace Watson
 {
@@ -26,7 +26,10 @@ namespace Watson
                 String json = "I am sad";
                 client.Headers[HttpRequestHeader.ContentType] = "text/plain";
                 result = client.UploadString("https://gateway.watsonplatform.net/tone-analyzer-experimental/api/v1/tone", json);
-                Console.WriteLine( JsonConvert.DeserializeObject(result));
+
+
+                JsonObject resultJson = JsonParser.Deserialize(result);
+                Console.WriteLine(resultJson);
             }
         }
 
