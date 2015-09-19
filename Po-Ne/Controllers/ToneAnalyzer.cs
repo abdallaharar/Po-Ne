@@ -10,7 +10,7 @@ using System.Json;
 
 namespace Watson
 {
-    class ToneAnalyzer
+    public static class ToneAnalyzer
     {
 
         public static void getToneAnalysis(String scorecard, String body)
