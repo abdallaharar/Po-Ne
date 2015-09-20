@@ -17,5 +17,10 @@ namespace Po_Ne.Controllers
         {
             return View();
         }
+
+        public string RetrieveWatsonFeedback(string dataRequest)
+        {
+            return dataRequest;
+        }
     }
 }
