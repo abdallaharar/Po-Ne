@@ -108,9 +108,6 @@ namespace Po_Ne.Controllers
             }
         }
 
-        public static double judge(string text)
-        {
-            return 0.2; 
-        }
+  
     }
 }
