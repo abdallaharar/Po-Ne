@@ -80,9 +80,37 @@ namespace Po_Ne.Controllers
                     children2 = children[0]["children"][0];
                     emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double) children2["linguistic_evidence"][0]["evidence_score"], words));
 
+
+                    children2 = children[1]["children"][2];
+                    evidence_score = (double)children2["linguistic_evidence"][0]["evidence_score"];
+                    words = children2["linguistic_evidence"][0]["words"].ToString();
+                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+
+                    children2 = children[1]["children"][1];
+                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+
+                    children2 = children[1]["children"][0];
+                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+
+
+                    children2 = children[2]["children"][2];
+                    evidence_score = (double)children2["linguistic_evidence"][0]["evidence_score"];
+                    words = children2["linguistic_evidence"][0]["words"].ToString();
+                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+
+                    children2 = children[2]["children"][1];
+                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+
+                    children2 = children[2]["children"][0];
+                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+                   
                     return emotions;
             }
         }
 
+        public static double judge(string text)
+        {
+            return 0.2; 
+        }
     }
 }
