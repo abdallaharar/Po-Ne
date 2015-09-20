@@ -23,7 +23,6 @@ namespace Po_Ne.Controllers
         public string words { get; set; }
         public double evidence_score { get; set; }
 
-
         public override string ToString()
         {
             string emotion = "";
@@ -109,49 +108,47 @@ namespace Po_Ne.Controllers
                 client.Headers[HttpRequestHeader.ContentType] = "text/plain";
                 result = client.UploadString("https://gateway.watsonplatform.net/tone-analyzer-experimental/api/v1/tone", body);
 
-
-
                 var root = JObject.Parse(result.ToString());
                 var children = root["children"];
 
                 List<emotion> emotions = new List<emotion>();
                     
-                    var children2 = children[0]["children"][2];
-                    var evidence_score = (double)children2["linguistic_evidence"][0]["evidence_score"];
-                    string words = children2["linguistic_evidence"][0]["words"].ToString();
-                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double) children2["linguistic_evidence"][0]["evidence_score"], words));
+                var children2 = children[0]["children"][2];
+                var evidence_score = (double)children2["linguistic_evidence"][0]["evidence_score"];
+                string words = children2["linguistic_evidence"][0]["words"].ToString();
+                emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double) children2["linguistic_evidence"][0]["evidence_score"], words));
 
-                    children2 = children[0]["children"][1];
-                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"],(double) children2["linguistic_evidence"][0]["evidence_score"], words));
+                children2 = children[0]["children"][1];
+                emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"],(double) children2["linguistic_evidence"][0]["evidence_score"], words));
 
-                    children2 = children[0]["children"][0];
-                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double) children2["linguistic_evidence"][0]["evidence_score"], words));
-
-
-                    children2 = children[1]["children"][2];
-                    evidence_score = (double)children2["linguistic_evidence"][0]["evidence_score"];
-                    words = children2["linguistic_evidence"][0]["words"].ToString();
-                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
-
-                    children2 = children[1]["children"][1];
-                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
-
-                    children2 = children[1]["children"][0];
-                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+                children2 = children[0]["children"][0];
+                emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double) children2["linguistic_evidence"][0]["evidence_score"], words));
 
 
-                    children2 = children[2]["children"][2];
-                    evidence_score = (double)children2["linguistic_evidence"][0]["evidence_score"];
-                    words = children2["linguistic_evidence"][0]["words"].ToString();
-                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+                children2 = children[1]["children"][2];
+                evidence_score = (double)children2["linguistic_evidence"][0]["evidence_score"];
+                words = children2["linguistic_evidence"][0]["words"].ToString();
+                emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
 
-                    children2 = children[2]["children"][1];
-                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+                children2 = children[1]["children"][1];
+                emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
 
-                    children2 = children[2]["children"][0];
-                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+                children2 = children[1]["children"][0];
+                emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+
+
+                children2 = children[2]["children"][2];
+                evidence_score = (double)children2["linguistic_evidence"][0]["evidence_score"];
+                words = children2["linguistic_evidence"][0]["words"].ToString();
+                emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+
+                children2 = children[2]["children"][1];
+                emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
+
+                children2 = children[2]["children"][0];
+                emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double)children2["linguistic_evidence"][0]["evidence_score"], words));
                    
-                    return emotions;
+                return emotions;
             }
         }
 
