@@ -48,6 +48,11 @@
     </div>
 
     <div id="Result" class="row">
-       
+        <br />
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@ViewData["WatsonApproval"]"
+                 aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                @ViewData["WatsonApproval"]% IBM Watson Approval
+            </div>
+        </div>
     </div>
-</div>
