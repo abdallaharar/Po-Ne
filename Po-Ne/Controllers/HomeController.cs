@@ -18,9 +18,9 @@ namespace Po_Ne.Controllers
             return View();
         }
 
-        public string RetrieveWatsonFeedback(string dataRequest)
+        public JsonResult RetrieveWatsonFeedback(string dataRequest)
         {
-            return dataRequest;
+            return Json(dataRequest);
         }
     }
 }
