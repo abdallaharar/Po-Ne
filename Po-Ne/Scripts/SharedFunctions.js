@@ -6,7 +6,13 @@ function WireButtons() {
     $("#btnFindOpinion").click(function() {
         var dataParm = $("#inSearch").val();
         ajaxPost("Home/RetrieveWatsonFeedback", dataParm, function (result) {
-            $("#Result").text('Result: ' + result);
+            result = Math.round((result * 100) * 100) / 100;
+            var resultProgressString = '<br/><div class="progress">' +
+            '<div class="progress-bar" role="progressbar" aria-valuenow="' + result + '" ' +
+            'aria-valuemin="0" aria-valuemax="100" style="width:'+result+'%">' +
+           result + '% IBM Watson Approval </div></div>';
+
+            $("#Result").html(resultProgressString);
         });
     });
 
