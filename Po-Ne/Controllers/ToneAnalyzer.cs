@@ -154,5 +154,33 @@ namespace Po_Ne.Controllers
                     return emotions;
             }
         }
+
+        public static double judge(string inputText)
+        {
+            List<emotion> emotions = getToneAnalysis("text", inputText);
+
+            emotion cheer = emotions[0];
+            emotion neg = emotions[1];
+            emotion anger = emotions[2];
+
+            Tone tone = new Tone(
+                cheer.word_count*cheer.normalize_score + cheer.raw_score,
+                neg.word_count*neg.normalize_score + neg.raw_score,
+                anger.word_count*anger.normalize_score + anger.raw_score
+            );
+
+            double distFromPrimePositive = tone.findDistanceFrom(_primaryPositive);
+            double distFromSecondaryPositive = tone.findDistanceFrom(_secondaryPositive);
+            double distFromPrimeNegative = tone.findDistanceFrom(_primaryNegative);
+            double distFromSecondaryNegative = tone.findDistanceFrom(_secondaryNegative);
+
+            double percentage = (1.5*distFromPrimePositive + distFromSecondaryPositive)/(1.5 * distFromPrimePositive 
+                + distFromSecondaryPositive + 1.5 * distFromPrimeNegative + distFromSecondaryNegative);
+
+            percentage = 1 - percentage;
+
+            return percentage;
+
+        }
     }
 }
