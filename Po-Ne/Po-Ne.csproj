@@ -171,10 +171,19 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\bg.png" />
+    <Content Include="Content\Images\black-honeycomb.jpg" />
+    <Content Include="Content\Images\BlitzFeed Logo Full Crop Shadow.png" />
+    <Content Include="Content\Images\BlitzFeed Logo Full Crop White Back.png" />
     <Content Include="Content\Images\BlitzFeed Logo Full Crop.png" />
     <Content Include="Content\Images\BlitzFeed Logo Partial.png" />
     <Content Include="Content\Images\BlitzFeed Logo.png" />
     <Content Include="Content\Images\BlitzFeed Logo2.png" />
+    <Content Include="Content\Images\blue-pattern-twitter-background.jpg" />
+    <Content Include="Content\Images\dark-pattern-background.jpg" />
+    <Content Include="Content\Images\Dynamic-honeycomb-pattern-in-Adobe-Illustrator.png" />
+    <Content Include="Content\Images\EW0ka.jpg" />
+    <Content Include="Content\Images\Seamless-Orange-Repeat-Pattern-520x317.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

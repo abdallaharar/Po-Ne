@@ -4,7 +4,11 @@
 
 <style>
     .jumbotron {
-        background-color: white;
+        background-color: transparent;
+    }
+
+    html, body {
+        background-color: #FFAC56;
     }
 
     #Title {
@@ -15,25 +19,35 @@
     #SubTitle {
         font-style: italic;
     }
+
+    .col-centered {
+        margin: 0 auto;
+        float: none;
+    }
+
+    textarea {
+        width: 400px;
+        height: 80px;
+    }
+
+    input[type="text"] {
+    width: 500px;
+}
 </style>
+<div class="container" style="text-align: center">
+    <div class="jumbotron">
+        <img vspace="0" class="jumbotronwidth" alt=" " src="~/Content/Images/BlitzFeed Logo Full Crop.png" width="400" />
+    </div>
 
-<div class="jumbotron">
-    <img vspace="0" class="jumbotronwidth" alt=" " src="~/Content/Images/BlitzFeed Logo Full Crop.png" width="450">
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2></h2>
-        <p></p>
+    <div class="row">
+        <div class="center">
+            <form action="demo_form.asp">
+                <input type="text" name="fname">
+            </form>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-    </div>
-    <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-    </div>
-</div>
 
-<p></p>
-<form id="test-form" data-ajax="false"></form>
+    <div class="row">
+        <button class="btn btn-default" type="button" style="width:400px">Find Me Some Opinions!</button>
+    </div>
+</div>
