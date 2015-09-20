@@ -7,10 +7,10 @@ function WireButtons() {
         var dataParm = $("#inSearch").val();
         ajaxPost("Home/RetrieveWatsonFeedback", dataParm, function (result) {
             result = Math.round((result * 100) * 100) / 100;
-            var resultProgressString = '<br/><div class="progress progress-striped">' +
+            var resultProgressString = '<br/><div class="progress">' +
             '<div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="' + result + '" ' +
             'aria-valuemin="0" aria-valuemax="100" style="width:'+result+'%">' +
-           result + '% IBM Watson Approval </div></div>';
+           result + '<span class>% IBM Watson Approval</span> </div></div>';
 
             $("#Result").html(resultProgressString);
         });
