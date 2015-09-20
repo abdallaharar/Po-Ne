@@ -154,7 +154,7 @@ namespace Po_Ne.Controllers
 
         private static double rescale(double value)
         {
-            double actual_max = 0.50;
+            double actual_max = 0.58;
             double actual_min = 0.40;
 
             double scaled_max = 1;
