@@ -4,7 +4,14 @@
 
 <style>
     .jumbotron {
-        background-color: white;
+        background-color: transparent;
+    }
+
+    html, body {    
+        /*
+            background-color: #FFAC56;
+        */
+        background-color: lightgrey;
     }
 
     #Title {
@@ -15,25 +22,32 @@
     #SubTitle {
         font-style: italic;
     }
+
+    .col-lg-3 {
+        width: 100%! important;
+    }
+
+    .input-group {
+        width: 200px !important;
+    }
 </style>
+<div class="container" style="text-align: center">
+    <div class="jumbotron">
+        <img vspace="0" class="jumbotronwidth" alt=" " src="~/Content/Images/BlitzFeed Logo Full Crop.png" width="800" style="max-width:100%" />
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class=".col-lg-3">
+                <input id="inSearch" class="form-control input-lg" id="inputlg" type="text" width="800" style="max-width:100%" placeholder="Enter person, place, or thing to retrieve user outlook...">
+            </div>
+        </div>
+    </div>
 
-<div class="jumbotron">
-    <img vspace="0" class="jumbotronwidth" alt=" " src="~/Content/Images/BlitzFeed Logo Full Crop.png" width="450">
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2></h2>
-        <p></p>
+    <div class="row">
+        <br /><button id="btnFindOpinion" class="btn btn-default" type="button" style="width:500px; max-width:100%; height: 70px; font-size:15pt" >Find Me Some Opinions!</button>
     </div>
-    <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-    </div>
-    <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-    </div>
-</div>
 
-<p></p>
-<form id="test-form" data-ajax="false"></form>
+    <div id="Result" class="row">
+       
+    </div>
+</div>

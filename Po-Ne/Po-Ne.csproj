@@ -193,7 +193,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TwitterApiClient.cs" />
     <Compile Include="Controllers\ToneAnalyzer.cs" />
@@ -208,10 +207,19 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\bg.png" />
+    <Content Include="Content\Images\black-honeycomb.jpg" />
+    <Content Include="Content\Images\BlitzFeed Logo Full Crop Shadow.png" />
+    <Content Include="Content\Images\BlitzFeed Logo Full Crop White Back.png" />
     <Content Include="Content\Images\BlitzFeed Logo Full Crop.png" />
     <Content Include="Content\Images\BlitzFeed Logo Partial.png" />
     <Content Include="Content\Images\BlitzFeed Logo.png" />
     <Content Include="Content\Images\BlitzFeed Logo2.png" />
+    <Content Include="Content\Images\blue-pattern-twitter-background.jpg" />
+    <Content Include="Content\Images\dark-pattern-background.jpg" />
+    <Content Include="Content\Images\Dynamic-honeycomb-pattern-in-Adobe-Illustrator.png" />
+    <Content Include="Content\Images\EW0ka.jpg" />
+    <Content Include="Content\Images\Seamless-Orange-Repeat-Pattern-520x317.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -230,6 +238,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\SharedFunctions.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -244,20 +253,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
