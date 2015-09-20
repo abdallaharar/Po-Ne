@@ -89,6 +89,12 @@ namespace Po_Ne.Controllers
             }
 
         }
+
+        private static Tone _primaryPositive = new Tone(1, 2, 3);
+        private static Tone _secondaryPositive = new Tone(4, 5, 6);
+
+        private static Tone _primaryNegative = new Tone(1, 2, 3);
+        private static Tone _secondaryNegative = new Tone(4, 5, 6);
         
         public static List<emotion> getToneAnalysis(String scorecard, String body)
         {
