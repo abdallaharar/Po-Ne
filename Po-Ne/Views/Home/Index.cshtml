@@ -23,34 +23,27 @@
         font-style: italic;
     }
 
-    .col-centered {
-        margin: 0 auto;
-        float: none;
+    .col-lg-3 {
+        width: 100%! important;
     }
 
-    textarea {
-        width: 400px;
-        height: 80px;
-    }
-
-    input[type="text"] {
-        width: 500px;
+    .input-group {
+        width: 200px !important;
     }
 </style>
 <div class="container" style="text-align: center">
     <div class="jumbotron">
-        <img vspace="0" class="jumbotronwidth" alt=" " src="~/Content/Images/BlitzFeed Logo Full Crop.png" width="800" style="max-width:100%"/>
+        <img vspace="0" class="jumbotronwidth" alt=" " src="~/Content/Images/BlitzFeed Logo Full Crop.png" width="800" style="max-width:100%" />
     </div>
-
     <div class="row">
-        <div class="center">
-            <form action="demo_form.asp">
-                <input type="text" name="fname">
-            </form>
+        <div class="form-group">
+            <div class=".col-lg-3">
+                <input class="form-control input-lg" id="inputlg" type="text" width="800" style="max-width:100%">
+            </div>
         </div>
     </div>
 
     <div class="row">
-        <br /><button class="btn btn-default" type="button" style="width:280px">Find Me Some Opinions!</button>
+        <br /><button class="btn btn-default" type="button" style="width:100%">Find Me Some Opinions!</button>
     </div>
 </div>
