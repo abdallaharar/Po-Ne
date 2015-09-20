@@ -8,7 +8,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Json;
 
-namespace Watson
+namespace Po_Ne.Controllers
 {
     public static class ToneAnalyzer
     {
