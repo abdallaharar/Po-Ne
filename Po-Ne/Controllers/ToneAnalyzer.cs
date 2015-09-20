@@ -151,27 +151,6 @@ namespace Po_Ne.Controllers
                 return emotions;
             }
         }
-
-        private static double rescale(double value)
-        {
-            double actual_max = 0.58;
-            double actual_min = 0.40;
-
-            double scaled_max = 1;
-            double scaled_min = 0;
-
-            double rescaled_val;
-
-            if (value > actual_min && value < actual_max)
-            {
-                rescaled_val = (scaled_max - scaled_min) * (value - actual_min) / (actual_max - actual_min) + scaled_min;
-                return rescaled_val;
-            }
-            else
-            {
-                return value;
-            }
-        }
         
         public static double judge(string inputText)
         {
@@ -195,7 +174,7 @@ namespace Po_Ne.Controllers
             double percentage = (5*distFromPrimePositive + distFromSecondaryPositive)/(5 * distFromPrimePositive 
                 + distFromSecondaryPositive + 5 * distFromPrimeNegative + distFromSecondaryNegative);
 
-            percentage = rescale(1 - percentage);
+            percentage = 1 - percentage;
             return percentage;
 
         }
