@@ -1,7 +1,8 @@
 ﻿
 @{
     ViewBag.Title = "Tone Analyser Test";
+    ViewData["WatsonResult"] = Po_Ne.Controllers.ToneAnalyzer.getToneAnalysis("scorecard", "I am sad");
 }
 
 <h2>This is the Tone Analyser Test</h2>
-
+<p>@ViewData["WatsonResult"]</p>

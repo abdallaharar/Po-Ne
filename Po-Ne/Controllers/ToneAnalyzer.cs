@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 using System.Runtime.Serialization;
-using System.Json;
+using Newtonsoft.Json;
 
 namespace Po_Ne.Controllers
 {
     public static class ToneAnalyzer
     {
 
-        public static void getToneAnalysis(String scorecard, String body)
+        public static String getToneAnalysis(String scorecard, String body)
         {
             string result = "";
             using (var client = new WebClient())
@@ -26,8 +26,10 @@ namespace Po_Ne.Controllers
                 client.Headers[HttpRequestHeader.ContentType] = "text/plain";
                 result = client.UploadString("https://gateway.watsonplatform.net/tone-analyzer-experimental/api/v1/tone", body);
 
-                JsonObject resultJson = (JsonObject) JsonValue.Parse(result);
-                Console.WriteLine(resultJson);
+                Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
+
+                
+                return values["id"];
             }
         }
 
