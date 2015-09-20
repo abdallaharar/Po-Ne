@@ -7,9 +7,45 @@ using System.Net;
 using System.IO;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using System.Json;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
 
 namespace Po_Ne.Controllers
 {
+    public class emotion
+    {
+        public string name { get; set; }
+        public string id { get; set; }
+        public int word_count { get; set; }
+        public double normalize_score { get; set; }
+        public double raw_score { get; set; }
+        public string[] words { get; set; }
+        public double evidence_score { get; set; }
+
+
+        public override string ToString()
+        {
+            string emotion = "";
+
+            emotion = "EMOTION {" + name + " " + id + " " + word_count + " " + normalize_score + " " + raw_score + " " + evidence_score + "}. "; 
+            return emotion;
+        }
+        public emotion() { }
+        public emotion(string name, string id, int word_count, double normalize_score, double raw_score, double evidence_score)
+        {
+            this.name = name;
+            this.id = id;
+            this.word_count = word_count;
+            this.normalize_score = normalize_score;
+            this.raw_score = raw_score;
+            this.evidence_score = evidence_score;
+            this.words = words; 
+        }
+
+
+    }
+
     public static class ToneAnalyzer
     {
 
@@ -26,10 +62,25 @@ namespace Po_Ne.Controllers
                 client.Headers[HttpRequestHeader.ContentType] = "text/plain";
                 result = client.UploadString("https://gateway.watsonplatform.net/tone-analyzer-experimental/api/v1/tone", body);
 
-                Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
 
-                
-                return values["id"];
+
+                var root = JObject.Parse(result.ToString());
+                var children = root["children"];
+
+                List<emotion> emotions = new List<emotion>();
+                    
+                    var children2 = children[0]["children"][2];
+                    var evidence_score = (double)children2["linguistic_evidence"][0]["evidence_score"];
+                    //var words = children2["linguistic_evidence"][0]["words"];
+                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double) children2["linguistic_evidence"][0]["evidence_score"]));
+
+                    children2 = children[0]["children"][1];
+                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"],(double) children2["linguistic_evidence"][0]["evidence_score"]));
+
+                    children2 = children[0]["children"][0];
+                    emotions.Add(new emotion(children2["name"].ToString(), children2["id"].ToString(), (int)children2["word_count"], (double)children2["normalized_score"], (double)children2["raw_score"], (double) children2["linguistic_evidence"][0]["evidence_score"]));
+
+                    return emotions.ElementAt(1).ToString();
             }
         }
 
