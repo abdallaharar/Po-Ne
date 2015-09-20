@@ -154,15 +154,18 @@ namespace Po_Ne.Controllers
 
         private static double rescale(double value)
         {
-            double actual_max = 0.55;
-            double actual_min = 0.30;
+            double actual_max = 0.50;
+            double actual_min = 0.40;
 
             double scaled_max = 1;
             double scaled_min = 0;
 
+            double rescaled_val;
+
             if (!(value > actual_min && value < actual_max))
             {
-                return (scaled_max - scaled_min) * (value - actual_min) / (actual_max - actual_min) + scaled_min;
+                rescaled_val = (scaled_max - scaled_min) * (value - actual_min) / (actual_max - actual_min) + scaled_min;
+                return rescaled_val;
             }
             else
             {
