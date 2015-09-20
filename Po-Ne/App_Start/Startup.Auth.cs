@@ -42,9 +42,9 @@ namespace Po_Ne
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            app.UseTwitterAuthentication(
+               consumerKey: "4HRbgQQmRLF6OB8hefm4FiL8g",
+               consumerSecret: "HYkatAOQMMUxGOMM9p5DGFRiYvItEJEJYaD46u17mBtMuEO6Xb");
 
             //app.UseFacebookAuthentication(
             //   appId: "",
