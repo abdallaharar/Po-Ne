@@ -152,6 +152,24 @@ namespace Po_Ne.Controllers
             }
         }
 
+        private static double rescale(double value)
+        {
+            double actual_max = 55;
+            double actual_min = 30;
+
+            double scaled_max = 100;
+            double scaled_min = 0;
+
+            if (!(value > actual_min && value < actual_max))
+            {
+                return (scaled_max - scaled_min) * (value - actual_min) / (actual_max - actual_min) + scaled_min;
+            }
+            else
+            {
+                return value;
+            }
+        }
+        
         public static double judge(string inputText)
         {
             List<emotion> emotions = getToneAnalysis("text", inputText);
@@ -174,8 +192,7 @@ namespace Po_Ne.Controllers
             double percentage = (5*distFromPrimePositive + distFromSecondaryPositive)/(5 * distFromPrimePositive 
                 + distFromSecondaryPositive + 5 * distFromPrimeNegative + distFromSecondaryNegative);
 
-            percentage = 1 - percentage;
-
+            percentage = rescale(1 - percentage);
             return percentage;
 
         }
