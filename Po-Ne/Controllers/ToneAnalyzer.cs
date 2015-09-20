@@ -171,8 +171,8 @@ namespace Po_Ne.Controllers
             double distFromPrimeNegative = tone.findDistanceFrom(_primaryNegative);
             double distFromSecondaryNegative = tone.findDistanceFrom(_secondaryNegative);
 
-            double percentage = (1.5*distFromPrimePositive + distFromSecondaryPositive)/(1.5 * distFromPrimePositive 
-                + distFromSecondaryPositive + 1.5 * distFromPrimeNegative + distFromSecondaryNegative);
+            double percentage = (5*distFromPrimePositive + distFromSecondaryPositive)/(5 * distFromPrimePositive 
+                + distFromSecondaryPositive + 5 * distFromPrimeNegative + distFromSecondaryNegative);
 
             percentage = 1 - percentage;
 
