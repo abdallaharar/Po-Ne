@@ -162,7 +162,7 @@ namespace Po_Ne.Controllers
 
             double rescaled_val;
 
-            if (!(value > actual_min && value < actual_max))
+            if (value > actual_min && value < actual_max)
             {
                 rescaled_val = (scaled_max - scaled_min) * (value - actual_min) / (actual_max - actual_min) + scaled_min;
                 return rescaled_val;
