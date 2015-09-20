@@ -49,6 +49,47 @@ namespace Po_Ne.Controllers
     public static class ToneAnalyzer
     {
 
+        private class Tone
+        {
+            private double _cheerfulness;
+            private double _negative;
+            private double _anger;
+
+            public Tone(double cheerfulness, double negative, double anger)
+            {
+                this._cheerfulness = cheerfulness;
+                this._negative = negative;
+                this._anger = anger;
+            }
+
+            public double Cheerfulness
+            {
+                get { return _cheerfulness; }
+            }
+
+            public double Negative
+            {
+                get { return _negative; }
+            }
+
+            public double Anger
+            {
+                get { return _anger; }
+            }
+
+            public double findDistanceFrom(Tone tone)
+            {
+                double deltaX, deltaY, deltaZ;
+
+                deltaX = this._cheerfulness - tone.Cheerfulness;
+                deltaY = this._negative - tone.Negative;
+                deltaZ = this._anger - tone.Anger;
+
+                return Math.Sqrt(Math.Pow(deltaX, 2) + Math.Pow(deltaY, 2) + Math.Pow(deltaZ, 2));
+            }
+
+        }
+        
         public static List<emotion> getToneAnalysis(String scorecard, String body)
         {
             string result = "";
@@ -106,11 +147,6 @@ namespace Po_Ne.Controllers
                    
                     return emotions;
             }
-        }
-
-        public static double judge(string text)
-        {
-            return 0.2; 
         }
     }
 }
